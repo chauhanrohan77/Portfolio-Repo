@@ -1,0 +1,27 @@
+---
+const links = [
+  { href: '/#projects', label: 'Work' },
+  { href: '/#about', label: 'About' },
+  { href: '/cv-rohan-chauhan.pdf', label: 'CV', external: true },
+];
+---
+
+<nav class="sticky top-0 z-50 border-b border-border bg-surface/90 backdrop-blur-sm">
+  <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="font-semibold text-ink hover:text-accent transition-colors text-sm tracking-tight">
+      Rohan Chauhan
+    </a>
+    <div class="flex items-center gap-6">
+      {links.map(link => (
+        <a
+          href={link.href}
+          target={link.external ? '_blank' : undefined}
+          rel={link.external ? 'noopener noreferrer' : undefined}
+          class="text-sm text-ink-muted hover:text-ink transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>

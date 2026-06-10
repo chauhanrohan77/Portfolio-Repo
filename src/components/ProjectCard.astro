@@ -1,0 +1,58 @@
+---
+import StatusBadge from './StatusBadge.astro';
+
+interface Props {
+  title: string;
+  oneliner: string;
+  status: 'built' | 'strategy';
+  tags: string[];
+  slug: string;
+  links: {
+    github?: string;
+    demo?: string;
+    prd?: string;
+  };
+}
+
+const { title, oneliner, status, tags, slug, links } = Astro.props;
+---
+
+<article class="border border-border rounded-lg p-6 bg-surface hover:border-accent transition-colors duration-150 border-l-[3px] border-l-accent">
+  <div class="mb-3">
+    <StatusBadge {status} />
+  </div>
+
+  <h3 class="font-semibold text-ink text-lg mb-2 leading-snug">
+    <a href={`/${slug}`} class="hover:text-accent transition-colors">
+      {title}
+    </a>
+  </h3>
+
+  <p class="text-ink-muted text-sm leading-relaxed mb-4">{oneliner}</p>
+
+  <div class="flex flex-wrap gap-2 mb-5">
+    {tags.map(tag => (
+      <span class="font-mono text-xs px-2 py-1 bg-canvas text-ink-muted rounded border border-border">
+        {tag}
+      </span>
+    ))}
+  </div>
+
+  <div class="flex items-center gap-5 text-sm">
+    <a href={`/${slug}`} class="text-accent font-medium hover:underline">
+      Case study →
+    </a>
+    {links.demo && (
+      <a href={links.demo} target="_blank" rel="noopener noreferrer"
+         class="text-ink-muted hover:text-ink transition-colors">
+        Demo ▶
+      </a>
+    )}
+    {links.github && (
+      <a href={links.github} target="_blank" rel="noopener noreferrer"
+         class="text-ink-muted hover:text-ink transition-colors">
+        GitHub ↗
+      </a>
+    )}
+  </div>
+</article>

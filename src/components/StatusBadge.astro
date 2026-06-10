@@ -1,0 +1,15 @@
+---
+interface Props {
+  status: 'built' | 'strategy';
+}
+const { status } = Astro.props;
+
+const label = status === 'built' ? 'Built & working' : 'Product strategy';
+const classes = status === 'built'
+  ? 'bg-badge-built-bg text-badge-built-text'
+  : 'bg-badge-strategy-bg text-badge-strategy-text';
+---
+
+<span class={`inline-block font-mono text-xs font-medium px-2.5 py-1 rounded ${classes}`}>
+  {label}
+</span>

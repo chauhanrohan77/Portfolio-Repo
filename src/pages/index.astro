@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ProjectCardSmall from '../components/ProjectCardSmall.astro';
+import { getCollection } from 'astro:content';
+
+const allProjects = await getCollection('projects');
+const sorted = allProjects.sort((a, b) => a.data.order - b.data.order);
+const builtProjects = sorted.filter(p => p.data.status === 'built');
+const strategyProjects = sorted.filter(p => p.data.status === 'strategy');
+---
+
+<BaseLayout title="Rohan Chauhan — AI Product Manager">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <!-- Hero -->
+    <section class="pt-20 pb-16 border-b border-border">
+      <p class="font-mono text-sm text-ink-muted mb-6">Rohan Chauhan</p>
+      <h1 class="text-4xl sm:text-5xl font-bold text-ink leading-tight tracking-tight mb-6">
+        AI Product Manager<br />for regulated industries.
+      </h1>
+      <p class="text-lg text-ink-muted leading-relaxed max-w-xl mb-4">
+        I design and build agentic AI systems that compliance functions can defend —
+        deterministic logic outside the model, human approval gates on every consequential
+        action, recall floors instead of vanity accuracy, audit trails by design.
+      </p>
+      <p class="text-sm text-ink-muted leading-relaxed max-w-xl">
+        Three working agent builds across AI governance, AML transaction monitoring, and
+        autonomous workflow automation — grounded in the EU AI Act, CBUAE, DIFC, and SDAIA
+        frameworks — plus product strategy work in Dubai real estate and consumer marketplaces.
+      </p>
+    </section>
+
+    <!-- Built projects -->
+    <section id="projects" class="py-16 border-b border-border">
+      <h2 class="font-mono text-xs uppercase tracking-wider text-ink-muted mb-8">
+        Built projects
+      </h2>
+      <div class="flex flex-col gap-4">
+        {builtProjects.map(project => (
+          <ProjectCard
+            title={project.data.title}
+            oneliner={project.data.oneliner}
+            status={project.data.status}
+            tags={project.data.tags}
+            slug={project.id}
+            links={project.data.links}
+          />
+        ))}
+      </div>
+    </section>
+
+    <!-- Strategy work -->
+    <section class="py-16 border-b border-border">
+      <h2 class="font-mono text-xs uppercase tracking-wider text-ink-muted mb-8">
+        Strategy work
+      </h2>
+      <div class="flex flex-col gap-3">
+        {strategyProjects.map(project => (
+          <ProjectCardSmall
+            title={project.data.title}
+            oneliner={project.data.oneliner}
+            status={project.data.status}
+            slug={project.id}
+          />
+        ))}
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-16 border-b border-border">
+      <h2 class="font-mono text-xs uppercase tracking-wider text-ink-muted mb-6">
+        About
+      </h2>
+      <div class="max-w-xl space-y-4 text-ink-secondary leading-relaxed">
+        <p>
+          I'm a product manager focused on applied AI in regulated industries — financial
+          services, compliance, and governance. My work sits at the intersection of AI
+          systems design and the institutional constraints that make those systems deployable
+          in practice.
+        </p>
+        <p>
+          I build agents and write product strategy. The builds in this portfolio are working
+          systems, not prototypes — they have evaluation harnesses, defined autonomy boundaries,
+          and audit trails. The strategy work reflects hands-on research into the markets
+          I've analysed, not generic frameworks applied from the outside.
+        </p>
+        <p>
+          Based in [City]. Open to product and consulting roles in the GCC and Europe.
+          Reach out by email or LinkedIn.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="py-16">
+      <h2 class="font-mono text-xs uppercase tracking-wider text-ink-muted mb-6">
+        Contact
+      </h2>
+      <div class="flex flex-wrap items-center gap-6 text-sm">
+        <a
+          href="mailto:dx25rohanc@iima.ac.in"
+          class="text-accent hover:underline"
+        >
+          dx25rohanc@iima.ac.in
+        </a>
+        <a
+          href="https://linkedin.com/in/rohan-chauhan"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-ink-muted hover:text-ink transition-colors"
+        >
+          LinkedIn ↗
+        </a>
+        <a
+          href="/cv-rohan-chauhan.pdf"
+          class="text-ink-muted hover:text-ink transition-colors"
+        >
+          Download CV ↓
+        </a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
