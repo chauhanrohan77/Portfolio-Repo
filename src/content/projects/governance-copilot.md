@@ -5,7 +5,7 @@ status: built
 order: 1
 tags: ["EU AI Act", "CBUAE", "SDAIA", "Python", "LangChain", "Bilingual EN/AR"]
 links:
-  github: "https://github.com/chauhanrohan77/governance-copilot"
+  github: "https://github.com/chauhanrohan77/AI-Governance-Model-Documentation-CoPilot"
   demo: ""
 architectureSteps:
   - "Intake record"

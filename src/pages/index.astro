@@ -14,53 +14,76 @@ const strategyProjects = sorted.filter(p => p.data.status === 'strategy');
   <div class="max-w-3xl mx-auto px-6">
 
     <!-- Hero -->
-    <section class="pt-20 pb-16 border-b border-border fade-in">
-      <p class="font-mono text-sm text-ink-muted mb-6">Rohan Chauhan · Dubai, UAE</p>
-      <h1 class="text-4xl sm:text-5xl font-bold text-ink leading-tight tracking-tight mb-6">
-        AI Product Manager<br />for regulated industries.
+    <section class="pt-24 pb-20 border-b border-border relative overflow-hidden fade-in">
+      <div class="absolute inset-0 bg-gradient-to-br from-accent/[0.04] via-transparent to-transparent pointer-events-none" />
+
+      <!-- Role pill -->
+      <div class="inline-flex items-center gap-2 border border-accent/25 bg-accent/[0.06] rounded-full px-3.5 py-1.5 mb-8">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent pulse-dot flex-shrink-0"></span>
+        <span class="font-mono text-xs font-medium text-accent tracking-wide">AI Product Manager · Dubai, UAE</span>
+      </div>
+
+      <h1 class="text-5xl sm:text-[3.4rem] font-bold text-ink leading-[1.1] tracking-tight mb-6">
+        Building AI systems<br />
+        <span class="text-accent">regulated industries</span><br />
+        can defend.
       </h1>
-      <p class="text-lg text-ink-secondary leading-relaxed max-w-xl mb-4">
-        Five years of engineering and product at Microsoft (Azure Storage) and OYO —
-        $400M+ in revenue impact across cloud infrastructure and AI-led transformations.
-        Now translating that technical depth into agentic AI systems that compliance
-        functions can actually defend.
+
+      <p class="text-lg text-ink-secondary leading-relaxed max-w-xl mb-3">
+        Five years at Microsoft (Azure Storage) and OYO — $400M+ in revenue impact.
+        Now building agentic AI systems that compliance functions can audit, explain,
+        and stand behind.
       </p>
       <p class="text-sm text-ink-muted leading-relaxed max-w-xl mb-10">
-        Three working agent builds grounded in the EU AI Act, CBUAE, DIFC, and SDAIA
-        frameworks — plus product strategy work in Dubai real estate and GCC consumer
-        marketplaces.
+        EU AI Act · CBUAE · DIFC · SDAIA — three working agent builds, grounded in real regulatory obligations.
       </p>
 
-      <div class="flex flex-wrap gap-x-8 gap-y-4">
-        <div>
-          <p class="font-mono text-xl font-semibold text-ink">$400M+</p>
-          <p class="text-xs text-ink-muted mt-0.5">Revenue impact</p>
+      <!-- CTA row -->
+      <div class="flex flex-wrap gap-3 mb-14">
+        <a href="/#projects"
+           class="inline-flex items-center gap-2 bg-accent text-white font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-accent-dark transition-colors shadow-sm">
+          View projects →
+        </a>
+        <a href="mailto:dx25rohanc@iima.ac.in"
+           class="inline-flex items-center gap-2 border border-border bg-surface text-ink-secondary font-medium text-sm px-5 py-2.5 rounded-lg hover:border-accent/40 hover:text-ink transition-colors">
+          Get in touch
+        </a>
+        <a href="/RohanChauhan_Resume.pdf" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 border border-border bg-surface text-ink-secondary font-medium text-sm px-5 py-2.5 rounded-lg hover:border-accent/40 hover:text-ink transition-colors">
+          Download CV ↓
+        </a>
+      </div>
+
+      <!-- Stats grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-px bg-border border border-border rounded-xl overflow-hidden">
+        <div class="bg-surface px-5 py-4">
+          <p class="font-mono text-2xl font-bold text-ink">$400M+</p>
+          <p class="text-xs text-ink-muted mt-1 leading-snug">Revenue impact</p>
         </div>
-        <div class="w-px bg-border self-stretch hidden sm:block" />
-        <div>
-          <p class="font-mono text-xl font-semibold text-ink">5 yrs</p>
-          <p class="text-xs text-ink-muted mt-0.5">Microsoft & OYO</p>
+        <div class="bg-surface px-5 py-4">
+          <p class="font-mono text-2xl font-bold text-ink">5 yrs</p>
+          <p class="text-xs text-ink-muted mt-1 leading-snug">Microsoft & OYO</p>
         </div>
-        <div class="w-px bg-border self-stretch hidden sm:block" />
-        <div>
-          <p class="font-mono text-xl font-semibold text-ink">3</p>
-          <p class="text-xs text-ink-muted mt-0.5">Agent builds shipped</p>
+        <div class="bg-surface px-5 py-4">
+          <p class="font-mono text-2xl font-bold text-ink">3</p>
+          <p class="text-xs text-ink-muted mt-1 leading-snug">Agent builds</p>
         </div>
-        <div class="w-px bg-border self-stretch hidden sm:block" />
-        <div>
-          <p class="font-mono text-xl font-semibold text-ink">3</p>
-          <p class="text-xs text-ink-muted mt-0.5">Jurisdictions covered</p>
+        <div class="bg-surface px-5 py-4">
+          <p class="font-mono text-2xl font-bold text-ink">3</p>
+          <p class="text-xs text-ink-muted mt-1 leading-snug">Jurisdictions covered</p>
         </div>
       </div>
     </section>
 
     <!-- Built projects -->
     <section id="projects" class="py-16 border-b border-border">
-      <h2 class="font-mono text-xs uppercase tracking-wider text-ink-muted mb-8">
-        Built projects
-      </h2>
+      <div class="flex items-center gap-3 mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-ink-muted">Built projects</span>
+        <div class="flex-1 h-px bg-border"></div>
+        <span class="font-mono text-xs text-ink-muted tabular-nums">{builtProjects.length}</span>
+      </div>
       <div class="flex flex-col gap-4">
-        {builtProjects.map(project => (
+        {builtProjects.map((project, i) => (
           <ProjectCard
             title={project.data.title}
             oneliner={project.data.oneliner}
@@ -68,6 +91,7 @@ const strategyProjects = sorted.filter(p => p.data.status === 'strategy');
             tags={project.data.tags}
             slug={project.id}
             links={project.data.links}
+            index={i}
           />
         ))}
       </div>
@@ -75,9 +99,11 @@ const strategyProjects = sorted.filter(p => p.data.status === 'strategy');
 
     <!-- Strategy work -->
     <section class="py-16 border-b border-border">
-      <h2 class="font-mono text-xs uppercase tracking-wider text-ink-muted mb-8">
-        Strategy work
-      </h2>
+      <div class="flex items-center gap-3 mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-ink-muted">Strategy work</span>
+        <div class="flex-1 h-px bg-border"></div>
+        <span class="font-mono text-xs text-ink-muted tabular-nums">{strategyProjects.length}</span>
+      </div>
       <div class="flex flex-col gap-3">
         {strategyProjects.map(project => (
           <ProjectCardSmall
@@ -90,55 +116,177 @@ const strategyProjects = sorted.filter(p => p.data.status === 'strategy');
       </div>
     </section>
 
+    <!-- Experience -->
+    <section class="py-16 border-b border-border">
+      <div class="flex items-center gap-3 mb-10">
+        <span class="font-mono text-xs uppercase tracking-widest text-ink-muted">Experience</span>
+        <div class="flex-1 h-px bg-border"></div>
+      </div>
+
+      <div class="space-y-10">
+
+        <!-- Microsoft SWE2 -->
+        <div class="flex gap-5">
+          <div class="flex flex-col items-center flex-shrink-0 pt-1">
+            <div class="w-2 h-2 rounded-full bg-accent ring-4 ring-accent/10 flex-shrink-0"></div>
+            <div class="w-px flex-1 bg-border mt-2"></div>
+          </div>
+          <div class="pb-2 flex-1 min-w-0">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-1">
+              <h3 class="font-semibold text-ink">Software Engineer 2 · Microsoft</h3>
+              <span class="font-mono text-xs text-ink-muted whitespace-nowrap flex-shrink-0">Nov 2023 – Sep 2025</span>
+            </div>
+            <p class="text-xs text-ink-muted mb-3">Azure Storage · Bengaluru, India</p>
+            <ul class="space-y-2 text-sm text-ink-secondary">
+              <li class="flex gap-2.5">
+                <span class="text-accent mt-[3px] flex-shrink-0 text-base leading-none">·</span>
+                <span>Deployed performance evaluation features across 20+ Azure regions — enabled $400M+ projected revenue infrastructure upgrades.</span>
+              </li>
+              <li class="flex gap-2.5">
+                <span class="text-accent mt-[3px] flex-shrink-0 text-base leading-none">·</span>
+                <span>Secured $150M Databricks contract by leading anonymous read support implementation for Azure Storage APIs.</span>
+              </li>
+              <li class="flex gap-2.5">
+                <span class="text-accent mt-[3px] flex-shrink-0 text-base leading-none">·</span>
+                <span>Accelerated engineering velocity 60% via AI-driven telemetry tools; built internal GenAI developer assistant on proprietary codebases.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Microsoft SWE1 -->
+        <div class="flex gap-5">
+          <div class="flex flex-col items-center flex-shrink-0 pt-1">
+            <div class="w-2 h-2 rounded-full bg-ink-muted/30 ring-4 ring-ink-muted/5 flex-shrink-0"></div>
+            <div class="w-px flex-1 bg-border mt-2"></div>
+          </div>
+          <div class="pb-2 flex-1 min-w-0">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-1">
+              <h3 class="font-semibold text-ink">Software Engineer 1 · Microsoft</h3>
+              <span class="font-mono text-xs text-ink-muted whitespace-nowrap flex-shrink-0">Oct 2021 – Oct 2023</span>
+            </div>
+            <p class="text-xs text-ink-muted mb-3">Azure Storage · Bengaluru, India</p>
+            <ul class="space-y-2 text-sm text-ink-secondary">
+              <li class="flex gap-2.5">
+                <span class="text-accent mt-[3px] flex-shrink-0 text-base leading-none">·</span>
+                <span>Supported Cold tier launch — projected $45M+ revenue — by delivering core features bridging the Cool–Archive storage gap.</span>
+              </li>
+              <li class="flex gap-2.5">
+                <span class="text-accent mt-[3px] flex-shrink-0 text-base leading-none">·</span>
+                <span>Drove 80% throughput improvement in high-volume archival via scalable batch-processing API (256 parallel ops per request).</span>
+              </li>
+              <li class="flex gap-2.5">
+                <span class="text-accent mt-[3px] flex-shrink-0 text-base leading-none">·</span>
+                <span>Reduced API overhead 15% through strategic authentication caching; led on-call response resolving 20+ high-severity production outages.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- OYO -->
+        <div class="flex gap-5">
+          <div class="flex flex-col items-center flex-shrink-0 pt-1">
+            <div class="w-2 h-2 rounded-full bg-ink-muted/30 ring-4 ring-ink-muted/5 flex-shrink-0"></div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-1">
+              <h3 class="font-semibold text-ink">Software Engineer · OYO Rooms</h3>
+              <span class="font-mono text-xs text-ink-muted whitespace-nowrap flex-shrink-0">Sep 2020 – Oct 2021</span>
+            </div>
+            <p class="text-xs text-ink-muted mb-3">Supply Chain & Operations · Gurgaon, India</p>
+            <ul class="space-y-2 text-sm text-ink-secondary">
+              <li class="flex gap-2.5">
+                <span class="text-accent mt-[3px] flex-shrink-0 text-base leading-none">·</span>
+                <span>Automated property onboarding in Indonesia — 40% turnaround time reduction; awarded Big Impact Award (2021).</span>
+              </li>
+              <li class="flex gap-2.5">
+                <span class="text-accent mt-[3px] flex-shrink-0 text-base leading-none">·</span>
+                <span>ML-powered hotel onboarding pipeline compressed cycle from 4 hours → 30 minutes, eliminating manual data entry.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- About -->
     <section id="about" class="py-16 border-b border-border">
-      <h2 class="font-mono text-xs uppercase tracking-wider text-ink-muted mb-6">
-        About
-      </h2>
-      <div class="max-w-xl space-y-4 text-ink-secondary leading-relaxed">
-        <p>
-          I'm a product manager with five years of engineering experience at Microsoft
-          (Azure Storage) and OYO, and currently completing an MBA at IIM Ahmedabad's
-          Dubai campus.
-        </p>
-        <p>
-          At Microsoft I shipped features across Azure Storage — Cold tier launch, batch-processing
-          APIs at scale, the anonymous read implementation that anchored a $150M Databricks contract,
-          and an internal GenAI developer assistant. That experience in high-stakes infrastructure
-          shaped how I think about AI in regulated industries: deterministic rules for what must be
-          auditable, LLMs for what benefits from language, humans on every consequential decision.
-        </p>
-        <p>
-          Based in Dubai. Open to product and consulting roles in the GCC and Europe.
-          Reach out by email or LinkedIn.
-        </p>
+      <div class="flex items-center gap-3 mb-8">
+        <span class="font-mono text-xs uppercase tracking-widest text-ink-muted">About</span>
+        <div class="flex-1 h-px bg-border"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-[1fr_190px] gap-10">
+        <div class="space-y-4 text-ink-secondary leading-relaxed">
+          <p>
+            Product manager with five years of engineering experience at Microsoft (Azure Storage)
+            and OYO. Currently completing an MBA (PGPX) at IIM Ahmedabad — Dubai campus.
+          </p>
+          <p>
+            At Microsoft I shipped features across Azure Storage — Cold tier launch, batch-processing
+            APIs at scale, the anonymous read implementation that anchored a $150M Databricks contract,
+            and an internal GenAI developer assistant. That infrastructure background shapes how I think
+            about AI in regulated industries: deterministic rules for what must be auditable, LLMs for
+            what benefits from language, humans on every consequential decision.
+          </p>
+          <p>
+            Based in Dubai. Open to AI PM and consulting roles in the GCC and Europe.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div>
+            <p class="font-mono text-[10px] uppercase tracking-widest text-ink-muted mb-2.5">Education</p>
+            <div class="space-y-3 text-sm">
+              <div>
+                <p class="font-semibold text-ink text-sm">IIM Ahmedabad</p>
+                <p class="text-ink-muted text-xs mt-0.5">MBA (PGPX) · 2025–2026</p>
+              </div>
+              <div>
+                <p class="font-semibold text-ink text-sm">IIIT Kota</p>
+                <p class="text-ink-muted text-xs mt-0.5">B.Tech ECE · 2016–2020</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p class="font-mono text-[10px] uppercase tracking-widest text-ink-muted mb-2.5">Credentials</p>
+            <div class="space-y-1.5 text-xs text-ink-secondary">
+              <p>AI For Business — UPenn</p>
+              <p>MS: AI Transformation Leader</p>
+              <p>GMAT 695 · 98th percentile</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Contact -->
     <section class="py-16">
-      <h2 class="font-mono text-xs uppercase tracking-wider text-ink-muted mb-6">
-        Contact
-      </h2>
-      <div class="flex flex-wrap items-center gap-6 text-sm">
-        <a
-          href="mailto:dx25rohanc@iima.ac.in"
-          class="text-accent hover:underline"
-        >
+      <div class="flex items-center gap-3 mb-6">
+        <span class="font-mono text-xs uppercase tracking-widest text-ink-muted">Contact</span>
+        <div class="flex-1 h-px bg-border"></div>
+      </div>
+      <p class="text-ink-secondary mb-6 max-w-sm text-sm leading-relaxed">
+        Open to AI PM and consulting roles in the GCC and Europe. Reach out directly.
+      </p>
+      <div class="flex flex-wrap items-center gap-3">
+        <a href="mailto:dx25rohanc@iima.ac.in"
+           class="inline-flex items-center gap-2 bg-accent text-white font-medium px-4 py-2.5 rounded-lg hover:bg-accent-dark transition-colors text-sm">
           dx25rohanc@iima.ac.in
         </a>
-        <a
-          href="https://linkedin.com/in/rohan-chauhan-011c"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-ink-muted hover:text-ink transition-colors"
-        >
+        <a href="tel:+971585579192"
+           class="inline-flex items-center text-sm text-ink-muted border border-border px-4 py-2.5 rounded-lg hover:border-accent/40 hover:text-ink transition-colors">
+          +971 58 557 9192
+        </a>
+        <a href="https://linkedin.com/in/rohan-chauhan-011c"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm text-ink-muted hover:text-ink transition-colors">
           LinkedIn ↗
         </a>
-        <a
-          href="/cv-rohan-chauhan.pdf"
-          class="text-ink-muted hover:text-ink transition-colors"
-        >
+        <a href="/RohanChauhan_Resume.pdf" target="_blank" rel="noopener noreferrer"
+           class="text-sm text-ink-muted hover:text-ink transition-colors">
           Download CV ↓
         </a>
       </div>

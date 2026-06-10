@@ -2,21 +2,22 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-border mt-24">
+<footer class="border-t border-border mt-16">
   <div class="max-w-3xl mx-auto px-6 py-8">
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-ink-muted">
-      <div class="flex items-center gap-5">
-        <a href="mailto:dx25rohanc@iima.ac.in" class="hover:text-accent transition-colors">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-ink-muted">
+        <span class="font-semibold text-ink text-xs tracking-tight">Rohan Chauhan</span>
+        <a href="mailto:dx25rohanc@iima.ac.in" class="hover:text-accent transition-colors text-xs">
           dx25rohanc@iima.ac.in
         </a>
-        <a href="https://linkedin.com/in/rohan-chauhan-011c" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">
+        <a href="https://linkedin.com/in/rohan-chauhan-011c" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors text-xs">
           LinkedIn ↗
         </a>
-        <a href="/cv-rohan-chauhan.pdf" class="hover:text-accent transition-colors">
+        <a href="/RohanChauhan_Resume.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors text-xs">
           CV ↓
         </a>
       </div>
-      <p>© {year} Rohan Chauhan</p>
+      <p class="text-xs text-ink-muted">© {year}</p>
     </div>
   </div>
 </footer>

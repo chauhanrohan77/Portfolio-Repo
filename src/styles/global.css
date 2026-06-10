@@ -33,6 +33,25 @@ html {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background: rgba(37, 99, 235, 0.12);
+  color: #111827;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #FAFAFA;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -40,6 +59,15 @@ html {
 
 .fade-in {
   animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.75); }
+}
+
+.pulse-dot {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
 body {

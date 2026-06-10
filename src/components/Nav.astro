@@ -2,26 +2,35 @@
 const links = [
   { href: '/#projects', label: 'Work' },
   { href: '/#about', label: 'About' },
-  { href: '/cv-rohan-chauhan.pdf', label: 'CV', external: true },
+  { href: '/RohanChauhan_Resume.pdf', label: 'Resume', external: true },
 ];
 ---
 
-<nav class="sticky top-0 z-50 border-b border-border bg-surface/90 backdrop-blur-sm">
-  <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="font-semibold text-ink hover:text-accent transition-colors text-sm tracking-tight">
-      Rohan Chauhan
+<nav class="sticky top-0 z-50 border-b border-border bg-surface/95 backdrop-blur-md">
+  <div class="max-w-3xl mx-auto px-6 py-3.5 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5 group">
+      <div class="w-7 h-7 rounded-md bg-accent flex items-center justify-center text-white font-bold text-xs flex-shrink-0 group-hover:bg-accent-dark transition-colors select-none">
+        RC
+      </div>
+      <span class="font-semibold text-ink text-sm tracking-tight">Rohan Chauhan</span>
     </a>
-    <div class="flex items-center gap-6">
+    <div class="flex items-center gap-1">
       {links.map(link => (
         <a
           href={link.href}
           target={link.external ? '_blank' : undefined}
           rel={link.external ? 'noopener noreferrer' : undefined}
-          class="text-sm text-ink-muted hover:text-ink transition-colors"
+          class="text-sm text-ink-muted hover:text-ink hover:bg-canvas px-3 py-1.5 rounded-md transition-colors"
         >
           {link.label}
         </a>
       ))}
+      <a
+        href="mailto:dx25rohanc@iima.ac.in"
+        class="ml-2 inline-flex items-center text-sm font-medium bg-accent text-white px-3.5 py-1.5 rounded-md hover:bg-accent-dark transition-colors"
+      >
+        Contact
+      </a>
     </div>
   </div>
 </nav>
