@@ -25,9 +25,11 @@ metrics:
 
 ## The problem
 
-Transaction monitoring under CBUAE/FATF obligations generates a high volume of alerts, the majority of which are false positives. Every alert requires review. Every missed true positive is a potential regulatory breach or sanctions violation. The economics are brutal: compliance teams spend most of their time on noise, which means they have less capacity to investigate the signals that matter.
+Under CBUAE rules and the FATF framework, UAE fintechs must run continuous transaction monitoring, screen against sanctions lists, apply the Travel Rule to qualifying transfers, and file Suspicious Activity Reports through the UAE Financial Intelligence Unit's goAML system. Rules-based monitoring engines generate a high volume of alerts — the vast majority are false positives, but each must still be reviewed by a compliance analyst. A missed true positive is a regulatory breach.
 
-Alert fatigue compounds over time — fatigued reviewers miss things. The correct product response is not "automate more" but "triage correctly": ensure every high-risk, sanctions-adjacent, or ambiguous alert reaches a human, while giving that human a well-structured disposition rationale so their review time is spent on judgment, not synthesis.
+The economics are brutal: compliance teams spend most of their time on noise, which means they have less capacity to investigate signals that matter. Alert fatigue compounds over time — fatigued reviewers miss things.
+
+The correct product response is not "automate more" but "triage correctly": ensure every high-risk, sanctions-adjacent, or ambiguous alert reaches a human, while giving that human a well-structured disposition rationale so their review time is spent on judgment, not synthesis.
 
 ## The core product decision
 

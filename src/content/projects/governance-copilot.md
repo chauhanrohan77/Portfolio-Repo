@@ -25,9 +25,11 @@ metrics:
 
 ## The problem
 
-Three regulatory regimes — the EU AI Act, CBUAE/DIFC, and SDAIA — are asking deployers of AI the same governance questions on overlapping timelines. Most firms, especially deployers of third-party AI, can't answer without a scramble. They carry near-identical documentation duties to developers but have less institutional readiness.
+Three regulatory regimes — the EU AI Act, CBUAE/DIFC, and SDAIA — are asking deployers of AI the same governance questions on overlapping timelines. The EU AI Act's high-risk obligations took effect August 2026. The CBUAE issued its responsible-AI guidance note in February 2026, requiring a documented AI model inventory, board-level accountability, and annual bias testing. DIFC Regulation 10 imposed binding AI impact-assessment duties in January 2026. Saudi Arabia designated 2026 the Year of AI, with SDAIA's framework converging on the same pillars: fairness, explainability, human oversight, and auditable records.
 
-The failure mode isn't ignorance of the regulation — it's an inability to translate a live AI deployment into the specific documentation each regime demands, quickly and consistently across jurisdictions.
+The common trap for financial services firms is assuming this is a developer problem. Deployers of third-party AI carry near-identical documentation duties and are the least prepared. Most can't answer the regulator's core question — "what AI systems do you run, what is each one's risk tier, and can you reconstruct a decision?" — without a scramble.
+
+The failure mode isn't ignorance of the regulation. It's an inability to translate a live deployment into the specific documentation each regime demands, quickly and consistently across jurisdictions.
 
 ## The core product decision
 

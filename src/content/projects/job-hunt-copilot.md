@@ -29,9 +29,21 @@ The result was a working agent that ingests job postings, scores them against a 
 
 ## The core product decision
 
-**The explainable scoring rubric is the product.** A job posting scored 8/10 is only useful if I know which dimensions drove it: compensation alignment, role scope, technical depth, regulatory domain match. A black-box score I can't interrogate is just noise with a confidence veneer.
+**The explainable scoring rubric is the product.** A job posting scored 8/10 is only useful if I know which dimensions drove it. A black-box score I can't interrogate is just noise with a confidence veneer.
 
-The rubric has five weighted dimensions, each with a 1–5 scale and a rationale string. The agent's scoring output is the rubric table, not a single number. I can disagree with a dimension, adjust the weight, and see how the aggregate score changes. This is the pattern I replicated in the AML triage confidence scores: not "this alert is high risk" but "this alert is high risk because [anchoring factors]."
+The rubric has five weighted dimensions, each with a 1–5 scale and a rationale string:
+
+| Dimension | Weight | What it measures |
+|---|---|---|
+| Domain match | 30% | Posting domain vs. target domains (fintech, AI, regulated industries) |
+| Seniority fit | 25% | Required years/level vs. profile; hard disqualifier if gap is large |
+| Skill overlap | 25% | Named skills/tools in the posting present in my profile |
+| Location/format | 10% | Onsite/remote and emirate vs. constraints |
+| Growth signal | 10% | Whether the role stretches in a desired direction |
+
+The agent's scoring output is the rubric table, not a single number. I can disagree with a dimension, adjust the weight, and see how the aggregate score changes. This is the pattern I replicated in the AML triage confidence scores: not "this alert is high risk" but "this alert is high risk because [anchoring factors]."
+
+The key trade-off in rubric design is precision vs. recall. A strict rubric surfaces only near-perfect fits (high precision) but misses stretch roles worth pursuing (lower recall). The threshold is a tunable lever — raising it filters aggressively, lowering it widens the shortlist. That framing transfers directly to the recall-floor design in the regulated builds.
 
 The approval gate was the second key decision. The agent identifies, scores, and drafts. I decide whether to send. This isn't timidity — it's the correct autonomy boundary for a high-stakes, personalized action. The same logic applies to a compliance officer reviewing an AI-drafted STR or a legal team reviewing a governance document.
 
