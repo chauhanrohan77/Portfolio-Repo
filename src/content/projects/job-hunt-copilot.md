@@ -5,7 +5,7 @@ status: built
 order: 3
 tags: ["Python", "LangChain", "Google Sheets", "Gmail API", "Agent loop"]
 links:
-  github: "https://github.com/rohanchauhan/job-hunt-copilot"
+  github: "https://github.com/chauhanrohan77/job-hunt-copilot"
 architectureSteps:
   - "Role ingestion"
   - "Explainable scoring"

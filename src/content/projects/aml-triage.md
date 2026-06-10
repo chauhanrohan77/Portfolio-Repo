@@ -5,7 +5,7 @@ status: built
 order: 2
 tags: ["CBUAE", "FATF", "AML", "Python", "LangChain", "Alert triage"]
 links:
-  github: "https://github.com/rohanchauhan/aml-triage"
+  github: "https://github.com/chauhanrohan77/aml-triage"
   demo: ""
 architectureSteps:
   - "Alert ingestion"
