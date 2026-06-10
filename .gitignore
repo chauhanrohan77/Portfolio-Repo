@@ -12,16 +12,32 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
-# environment variables
+# environment variables — all variants
 .env
+.env.local
+.env.*.local
+.env.development
+.env.test
 .env.production
+
+# API credentials and secrets
+credentials.json
+*.credentials.json
+service-account*.json
+client_secret*.json
+*.pem
+*.key
+*.p12
+*.pfx
 
 # macOS-specific files
 .DS_Store
+.DS_Store?
+._*
 
-# jetbrains setting folder
+# editor folders
 .idea/
+.vscode/
 
 # vercel
 .vercel
