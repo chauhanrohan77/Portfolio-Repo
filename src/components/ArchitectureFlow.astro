@@ -5,17 +5,23 @@ interface Props {
 const { steps } = Astro.props;
 ---
 
-<div class="overflow-x-auto">
-  <div class="flex items-center gap-0 min-w-max">
+<div class="overflow-x-auto -mx-2 px-2">
+  <div class="flex items-end gap-0 min-w-max py-2">
     {steps.map((step, i) => (
       <>
-        <div class="flex flex-col items-center">
-          <div class="font-mono text-xs text-ink-secondary bg-surface border border-border rounded px-3 py-2 text-center whitespace-nowrap">
+        <div class="flex flex-col items-center gap-2">
+          <span class="font-mono text-[10px] text-ink-muted/60 tabular-nums">
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          <div class="font-mono text-xs text-ink-secondary bg-surface border border-border
+            rounded-lg px-3 py-2.5 text-center whitespace-nowrap
+            hover:border-accent/50 hover:text-ink hover:bg-canvas
+            transition-all duration-150 cursor-default">
             {step}
           </div>
         </div>
         {i < steps.length - 1 && (
-          <div class="text-border mx-1 text-ink-muted flex-shrink-0">
+          <div class="flex-shrink-0 text-border mx-0.5 pb-0.5">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
